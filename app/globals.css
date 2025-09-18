@@ -4,75 +4,76 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color palette to amber/warm theme for portfolio */
-  --background: #ffffff;
-  --foreground: #374151;
-  --card: #fefce8;
-  --card-foreground: #374151;
-  --popover: #fefce8;
-  --popover-foreground: #374151;
-  --primary: #d97706;
-  --primary-foreground: #ffffff;
-  --secondary: #f59e0b;
-  --secondary-foreground: #ffffff;
-  --muted: #fefce8;
-  --muted-foreground: #6b7280;
-  --accent: #f59e0b;
-  --accent-foreground: #374151;
-  --destructive: #dc2626;
-  --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
-  --input: #ffffff;
-  --ring: rgba(217, 119, 6, 0.5);
-  --chart-1: #d97706;
-  --chart-2: #f59e0b;
-  --chart-3: #374151;
-  --chart-4: #fefce8;
-  --chart-5: #dc2626;
-  --radius: 0.5rem;
-  --sidebar: #fefce8;
-  --sidebar-foreground: #374151;
-  --sidebar-primary: #d97706;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f59e0b;
-  --sidebar-accent-foreground: #374151;
-  --sidebar-border: #e5e7eb;
-  --sidebar-ring: rgba(217, 119, 6, 0.5);
+  /* Updated to striking blue and gray color palette */
+  --background: #ffffff; /* Pure white */
+  --foreground: #0f172a; /* Much darker text for better contrast */
+  --card: #f8fafc; /* Slightly lighter card background */
+  --card-foreground: #0f172a; /* Very dark text on cards */
+  --popover: #ffffff; /* White popover */
+  --popover-foreground: #0f172a; /* Very dark text on popover */
+  --primary: #1e293b; /* Deep gray primary */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #475569; /* Darker secondary for better contrast */
+  --secondary-foreground: #ffffff; /* White text on secondary */
+  --muted: #f1f5f9; /* Very light gray */
+  --muted-foreground: #334155; /* Much darker muted text */
+  --accent: #2563eb; /* Stronger blue accent */
+  --accent-foreground: #ffffff; /* White text on accent */
+  --destructive: #dc2626; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #e2e8f0; /* Light gray borders */
+  --input: #f8fafc; /* Light input background */
+  --ring: rgba(37, 99, 235, 0.5); /* Blue ring with transparency */
+  --chart-1: #2563eb; /* Blue chart color */
+  --chart-2: #3b82f6; /* Light blue chart color */
+  --chart-3: #22c55e; /* Green chart color */
+  --chart-4: #f59e0b; /* Orange chart color */
+  --chart-5: #dc2626; /* Red chart color */
+  --radius: 0.625rem;
+  --sidebar: #f8fafc; /* Light sidebar */
+  --sidebar-foreground: #0f172a; /* Very dark sidebar text */
+  --sidebar-primary: #1e293b; /* Gray sidebar primary */
+  --sidebar-primary-foreground: #ffffff; /* White sidebar primary text */
+  --sidebar-accent: #2563eb; /* Blue sidebar accent */
+  --sidebar-accent-foreground: #ffffff; /* White sidebar accent text */
+  --sidebar-border: #e2e8f0; /* Light sidebar border */
+  --sidebar-ring: rgba(37, 99, 235, 0.5); /* Blue sidebar ring */
 }
 
 .dark {
-  --background: #1f2937;
-  --foreground: #f9fafb;
-  --card: #374151;
-  --card-foreground: #f9fafb;
-  --popover: #374151;
-  --popover-foreground: #f9fafb;
-  --primary: #f59e0b;
-  --primary-foreground: #1f2937;
-  --secondary: #d97706;
-  --secondary-foreground: #f9fafb;
-  --muted: #4b5563;
-  --muted-foreground: #9ca3af;
-  --accent: #f59e0b;
-  --accent-foreground: #1f2937;
-  --destructive: #ef4444;
-  --destructive-foreground: #f9fafb;
-  --border: #4b5563;
-  --input: #374151;
-  --ring: rgba(245, 158, 11, 0.5);
-  --chart-1: #f59e0b;
-  --chart-2: #d97706;
-  --chart-3: #f9fafb;
-  --chart-4: #374151;
-  --chart-5: #ef4444;
-  --sidebar: #374151;
-  --sidebar-foreground: #f9fafb;
-  --sidebar-primary: #f59e0b;
-  --sidebar-primary-foreground: #1f2937;
-  --sidebar-accent: #d97706;
-  --sidebar-accent-foreground: #f9fafb;
-  --sidebar-border: #4b5563;
-  --sidebar-ring: rgba(245, 158, 11, 0.5);
+  /* Updated dark mode with complementary blue and gray colors */
+  --background: #0f172a; /* Very dark blue-gray background */
+  --foreground: #f8fafc; /* Very light text for maximum contrast */
+  --card: #1e293b; /* Dark card with blue-gray tint */
+  --card-foreground: #f8fafc; /* Very light card text */
+  --popover: #0f172a; /* Dark popover */
+  --popover-foreground: #f8fafc; /* Very light popover text */
+  --primary: #3b82f6; /* Brighter blue primary in dark */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #64748b; /* Lighter secondary for better visibility */
+  --secondary-foreground: #f8fafc; /* Very light text on secondary */
+  --muted: #1e293b; /* Dark muted */
+  --muted-foreground: #cbd5e1; /* Much lighter muted text */
+  --accent: #60a5fa; /* Even brighter blue accent */
+  --accent-foreground: #0f172a; /* Dark text on bright accent */
+  --destructive: #ef4444; /* Red destructive */
+  --destructive-foreground: #f8fafc; /* Light destructive text */
+  --border: #334155; /* Dark border */
+  --input: #1e293b; /* Dark input */
+  --ring: rgba(96, 165, 250, 0.5); /* Light blue ring with transparency */
+  --chart-1: #60a5fa; /* Light blue chart */
+  --chart-2: #3b82f6; /* Blue chart */
+  --chart-3: #10b981; /* Green chart */
+  --chart-4: #f59e0b; /* Orange chart */
+  --chart-5: #ef4444; /* Red chart */
+  --sidebar: #1e293b; /* Dark sidebar */
+  --sidebar-foreground: #f8fafc; /* Very light sidebar text */
+  --sidebar-primary: #3b82f6; /* Blue sidebar primary */
+  --sidebar-primary-foreground: #ffffff; /* White sidebar primary text */
+  --sidebar-accent: #60a5fa; /* Light blue sidebar accent */
+  --sidebar-accent-foreground: #0f172a; /* Dark text on bright accent */
+  --sidebar-border: #334155; /* Dark sidebar border */
+  --sidebar-ring: rgba(96, 165, 250, 0.5); /* Light blue sidebar ring */
 }
 
 @theme inline {
@@ -123,53 +124,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-/* Added custom animations for portfolio interactions */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out;
-}
-
-.skill-bar {
-  transition: width 1s ease-in-out;
 }

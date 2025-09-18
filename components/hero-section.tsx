@@ -1,106 +1,40 @@
-"use client"
-
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Github, Linkedin, Mail, ChevronDown } from "lucide-react"
+"use client";
 
 export function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
-
-  const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
-      <div className="absolute inset-0 bg-[url('/abstract-geometric-pattern.png')] opacity-5" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source
+            src="/placeholder.mp4?duration=10&theme=abstract-green"
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10">
-        <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
-          <div className="mb-8">
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-secondary p-1">
-              <Avatar className="w-full h-full">
-                <AvatarImage src="/professional-developer-avatar.png" alt="김개발" />
-                <AvatarFallback className="text-2xl font-bold">김개발</AvatarFallback>
-              </Avatar>
-            </div>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
-            안녕하세요, <br />
-            <span className="text-primary">프론트엔드 개발자</span> <br />
-            김개발입니다
+      <div className="relative z-10 text-center px-6">
+        <div className="bg-black/80 backdrop-blur-sm text-center py-20 px-8 rounded-lg mb-8 border border-primary/30 animate-in fade-in slide-in-from-bottom duration-1000 delay-500 hover:scale-105 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20 transition-all">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-4 animate-in slide-in-from-left duration-1000 delay-700 hover:text-accent transition-colors">
+            HELLO WORLD!
           </h1>
-
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty">
-            사용자 경험을 중시하는 인터랙티브한 웹 애플리케이션을 만듭니다
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary flex items-center justify-center gap-4 animate-in slide-in-from-right duration-1000 delay-900">
+            MINHEE PORTFOLIO
+            <span className="text-accent text-4xl md:text-6xl animate-bounce hover:animate-spin transition-all duration-300 cursor-pointer">
+              👋
+            </span>
+          </h2>
+          <p className="text-primary/80 mt-6 text-lg animate-in fade-in duration-1000 delay-1200 hover:text-accent transition-colors">
+            로딩중... 완료!
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="text-lg px-8 py-3">
-              프로젝트 보기
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-3 bg-transparent">
-              이력서 다운로드
-            </Button>
-          </div>
-
-          <div className="flex justify-center space-x-6">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon" className="hover:text-primary">
-                    <Github className="h-6 w-6" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>GitHub</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon" className="hover:text-primary">
-                    <Linkedin className="h-6 w-6" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>LinkedIn</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon" className="hover:text-primary">
-                    <Mail className="h-6 w-6" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>이메일</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <Button variant="ghost" size="icon" onClick={scrollToAbout}>
-            <ChevronDown className="h-6 w-6" />
-          </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }
