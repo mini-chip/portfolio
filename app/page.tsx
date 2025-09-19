@@ -1,19 +1,28 @@
-import { HeroSection } from "@/components/hero-section"
-import { AboutSection } from "@/components/about-section"
-import { SkillsSection } from "@/components/skills-section"
-import { ProjectsSection } from "@/components/projects-section"
-import { ContactSection } from "@/components/contact-section"
-import { Navigation } from "@/components/navigation"
+"use client"
 
-export default function Portfolio() {
+import { useState } from "react"
+import { Hero } from "@/components/hero"
+import { About } from "@/components/about"
+import { Projects } from "@/components/projects"
+import { Skills } from "@/components/skills"
+import { Contact } from "@/components/contact"
+import { Navigation } from "@/components/navigation"
+import { StarField } from "@/components/star-field"
+
+export default function Home() {
+  const [language, setLanguage] = useState<"ko" | "en">("ko")
+
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
-    </main>
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <StarField />
+      <Navigation language={language} setLanguage={setLanguage} />
+      <main>
+        <Hero language={language} />
+        <About />
+        <Projects language={language} />
+        <Skills />
+        <Contact />
+      </main>
+    </div>
   )
 }

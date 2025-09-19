@@ -4,76 +4,152 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated to striking blue and gray color palette */
-  --background: #ffffff; /* Pure white */
-  --foreground: #0f172a; /* Much darker text for better contrast */
-  --card: #f8fafc; /* Slightly lighter card background */
-  --card-foreground: #0f172a; /* Very dark text on cards */
-  --popover: #ffffff; /* White popover */
-  --popover-foreground: #0f172a; /* Very dark text on popover */
-  --primary: #1e293b; /* Deep gray primary */
-  --primary-foreground: #ffffff; /* White text on primary */
-  --secondary: #475569; /* Darker secondary for better contrast */
-  --secondary-foreground: #ffffff; /* White text on secondary */
-  --muted: #f1f5f9; /* Very light gray */
-  --muted-foreground: #334155; /* Much darker muted text */
-  --accent: #2563eb; /* Stronger blue accent */
-  --accent-foreground: #ffffff; /* White text on accent */
-  --destructive: #dc2626; /* Red for destructive actions */
-  --destructive-foreground: #ffffff; /* White text on destructive */
-  --border: #e2e8f0; /* Light gray borders */
-  --input: #f8fafc; /* Light input background */
-  --ring: rgba(37, 99, 235, 0.5); /* Blue ring with transparency */
-  --chart-1: #2563eb; /* Blue chart color */
-  --chart-2: #3b82f6; /* Light blue chart color */
-  --chart-3: #22c55e; /* Green chart color */
-  --chart-4: #f59e0b; /* Orange chart color */
-  --chart-5: #dc2626; /* Red chart color */
-  --radius: 0.625rem;
-  --sidebar: #f8fafc; /* Light sidebar */
-  --sidebar-foreground: #0f172a; /* Very dark sidebar text */
-  --sidebar-primary: #1e293b; /* Gray sidebar primary */
-  --sidebar-primary-foreground: #ffffff; /* White sidebar primary text */
-  --sidebar-accent: #2563eb; /* Blue sidebar accent */
-  --sidebar-accent-foreground: #ffffff; /* White sidebar accent text */
-  --sidebar-border: #e2e8f0; /* Light sidebar border */
-  --sidebar-ring: rgba(37, 99, 235, 0.5); /* Blue sidebar ring */
+  /* Updated to cosmic theme colors */
+  --background: oklch(0.15 0.05 240); /* Deep space blue */
+  --foreground: oklch(0.98 0 0); /* Pure white for text */
+  --card: oklch(0.92 0.02 240); /* Light cosmic blue for cards */
+  --card-foreground: oklch(0.25 0.02 240); /* Dark blue-gray for card text */
+  --popover: oklch(0.98 0 0); /* White for popovers */
+  --popover-foreground: oklch(
+    0.15 0.05 240
+  ); /* Deep space blue for popover text */
+  --primary: oklch(0.65 0.25 330); /* Cosmic pink accent */
+  --primary-foreground: oklch(0.98 0 0); /* White text on primary */
+  --secondary: oklch(0.35 0.02 240); /* Dark blue-gray for secondary */
+  --secondary-foreground: oklch(0.98 0 0); /* White text on secondary */
+  --muted: oklch(0.88 0.01 240); /* Very light cosmic blue */
+  --muted-foreground: oklch(0.35 0.02 240); /* Dark blue-gray for muted text */
+  --accent: oklch(0.65 0.25 330); /* Cosmic pink accent */
+  --accent-foreground: oklch(0.98 0 0); /* White text on accent */
+  --destructive: oklch(0.55 0.25 15); /* Red for destructive actions */
+  --destructive-foreground: oklch(0.98 0 0); /* White text on destructive */
+  --border: oklch(0.35 0.02 240); /* Dark blue-gray borders */
+  --input: oklch(0.98 0 0); /* White input backgrounds */
+  --ring: oklch(0.65 0.25 330 / 0.5); /* Semi-transparent cosmic pink ring */
+  --chart-1: oklch(0.65 0.25 330); /* Cosmic pink */
+  --chart-2: oklch(0.15 0.05 240); /* Deep space blue */
+  --chart-3: oklch(0.45 0.15 60); /* Golden accent */
+  --chart-4: oklch(0.55 0.25 15); /* Red accent */
+  --chart-5: oklch(0.35 0.02 240); /* Dark blue-gray */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.15 0.05 240); /* Deep space blue sidebar */
+  --sidebar-foreground: oklch(0.98 0 0); /* White sidebar text */
+  --sidebar-primary: oklch(0.65 0.25 330); /* Cosmic pink highlights */
+  --sidebar-primary-foreground: oklch(0.98 0 0); /* White text on highlights */
+  --sidebar-accent: oklch(0.92 0.02 240); /* Light cosmic blue accent */
+  --sidebar-accent-foreground: oklch(0.25 0.02 240); /* Dark text on accent */
+  --sidebar-border: oklch(0.35 0.02 240); /* Dark blue-gray borders */
+  --sidebar-ring: oklch(
+    0.65 0.25 330 / 0.5
+  ); /* Semi-transparent cosmic pink ring */
 }
 
 .dark {
-  /* Updated dark mode with complementary blue and gray colors */
-  --background: #0f172a; /* Very dark blue-gray background */
-  --foreground: #f8fafc; /* Very light text for maximum contrast */
-  --card: #1e293b; /* Dark card with blue-gray tint */
-  --card-foreground: #f8fafc; /* Very light card text */
-  --popover: #0f172a; /* Dark popover */
-  --popover-foreground: #f8fafc; /* Very light popover text */
-  --primary: #3b82f6; /* Brighter blue primary in dark */
-  --primary-foreground: #ffffff; /* White text on primary */
-  --secondary: #64748b; /* Lighter secondary for better visibility */
-  --secondary-foreground: #f8fafc; /* Very light text on secondary */
-  --muted: #1e293b; /* Dark muted */
-  --muted-foreground: #cbd5e1; /* Much lighter muted text */
-  --accent: #60a5fa; /* Even brighter blue accent */
-  --accent-foreground: #0f172a; /* Dark text on bright accent */
-  --destructive: #ef4444; /* Red destructive */
-  --destructive-foreground: #f8fafc; /* Light destructive text */
-  --border: #334155; /* Dark border */
-  --input: #1e293b; /* Dark input */
-  --ring: rgba(96, 165, 250, 0.5); /* Light blue ring with transparency */
-  --chart-1: #60a5fa; /* Light blue chart */
-  --chart-2: #3b82f6; /* Blue chart */
-  --chart-3: #10b981; /* Green chart */
-  --chart-4: #f59e0b; /* Orange chart */
-  --chart-5: #ef4444; /* Red chart */
-  --sidebar: #1e293b; /* Dark sidebar */
-  --sidebar-foreground: #f8fafc; /* Very light sidebar text */
-  --sidebar-primary: #3b82f6; /* Blue sidebar primary */
-  --sidebar-primary-foreground: #ffffff; /* White sidebar primary text */
-  --sidebar-accent: #60a5fa; /* Light blue sidebar accent */
-  --sidebar-accent-foreground: #0f172a; /* Dark text on bright accent */
-  --sidebar-border: #334155; /* Dark sidebar border */
-  --sidebar-ring: rgba(96, 165, 250, 0.5); /* Light blue sidebar ring */
+  /* Enhanced dark mode for space theme */
+  --background: oklch(0.08 0.03 240); /* Even deeper space */
+  --foreground: oklch(0.95 0.01 240); /* Slightly tinted white */
+  --card: oklch(0.12 0.04 240); /* Dark cosmic blue cards */
+  --card-foreground: oklch(0.95 0.01 240); /* Light text on cards */
+  --popover: oklch(0.12 0.04 240); /* Dark cosmic blue popovers */
+  --popover-foreground: oklch(0.95 0.01 240); /* Light text on popovers */
+  --primary: oklch(0.75 0.25 330); /* Brighter cosmic pink */
+  --primary-foreground: oklch(0.08 0.03 240); /* Dark text on primary */
+  --secondary: oklch(0.18 0.04 240); /* Lighter dark blue */
+  --secondary-foreground: oklch(0.95 0.01 240); /* Light text on secondary */
+  --muted: oklch(0.18 0.04 240); /* Muted dark blue */
+  --muted-foreground: oklch(0.65 0.02 240); /* Medium light text */
+  --accent: oklch(0.18 0.04 240); /* Dark blue accent */
+  --accent-foreground: oklch(0.95 0.01 240); /* Light text on accent */
+  --destructive: oklch(0.45 0.2 15); /* Darker red */
+  --destructive-foreground: oklch(0.85 0.15 15); /* Light red text */
+  --border: oklch(0.18 0.04 240); /* Dark blue borders */
+  --input: oklch(0.18 0.04 240); /* Dark blue inputs */
+  --ring: oklch(0.45 0.15 240); /* Medium blue ring */
+  --chart-1: oklch(0.55 0.25 270); /* Purple chart color */
+  --chart-2: oklch(0.65 0.2 180); /* Cyan chart color */
+  --chart-3: oklch(0.75 0.2 70); /* Yellow chart color */
+  --chart-4: oklch(0.6 0.25 300); /* Magenta chart color */
+  --chart-5: oklch(0.65 0.25 16); /* Orange chart color */
+  --sidebar: oklch(0.1 0.03 240); /* Very dark space sidebar */
+  --sidebar-foreground: oklch(0.95 0.01 240); /* Light sidebar text */
+  --sidebar-primary: oklch(0.55 0.25 270); /* Purple sidebar highlights */
+  --sidebar-primary-foreground: oklch(
+    0.95 0.01 240
+  ); /* Light text on highlights */
+  --sidebar-accent: oklch(0.18 0.04 240); /* Dark blue sidebar accent */
+  --sidebar-accent-foreground: oklch(0.95 0.01 240); /* Light text on accent */
+  --sidebar-border: oklch(0.18 0.04 240); /* Dark blue borders */
+  --sidebar-ring: oklch(0.45 0.15 240); /* Medium blue ring */
+}
+
+/* Added custom animations for cosmic effects */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes textSparkle {
+  0%,
+  100% {
+    text-shadow: 0 0 5px oklch(0.65 0.25 330 / 0.6),
+      0 0 10px oklch(0.65 0.25 330 / 0.4), 0 0 15px oklch(0.65 0.25 330 / 0.2);
+  }
+  25% {
+    text-shadow: 0 0 10px oklch(0.75 0.25 330 / 0.8),
+      0 0 20px oklch(0.75 0.25 330 / 0.6), 0 0 30px oklch(0.75 0.25 330 / 0.4),
+      0 0 40px oklch(0.75 0.25 330 / 0.2);
+  }
+  50% {
+    text-shadow: 0 0 15px oklch(0.85 0.25 330 / 1),
+      0 0 25px oklch(0.85 0.25 330 / 0.8), 0 0 35px oklch(0.85 0.25 330 / 0.6),
+      0 0 45px oklch(0.85 0.25 330 / 0.4), 0 0 55px oklch(0.85 0.25 330 / 0.2);
+  }
+  75% {
+    text-shadow: 0 0 10px oklch(0.75 0.25 330 / 0.8),
+      0 0 20px oklch(0.75 0.25 330 / 0.6), 0 0 30px oklch(0.75 0.25 330 / 0.4),
+      0 0 40px oklch(0.75 0.25 330 / 0.2);
+  }
+}
+
+.twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.glow {
+  animation: textSparkle 3s ease-in-out infinite;
+}
+
+.text-sparkle {
+  animation: textSparkle 2s ease-in-out infinite;
+  background: linear-gradient(
+    45deg,
+    oklch(0.95 0.01 240),
+    oklch(0.75 0.25 330),
+    oklch(0.95 0.01 240)
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @theme inline {
