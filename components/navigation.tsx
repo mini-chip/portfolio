@@ -33,14 +33,18 @@ export function Navigation({ language, setLanguage }: NavigationProps) {
       const sections = navItems[language].map((item) => item.href.slice(1));
       const scrollPosition = window.scrollY + 100;
 
-      for (const section of sections) {
+      // Check if we're at the bottom of the page (contact section)
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+        setActiveSection("contact");
+        return;
+      }
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
         const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
+          const { offsetTop } = element;
+          if (scrollPosition >= offsetTop - 50) {
             setActiveSection(section);
             break;
           }
@@ -49,6 +53,7 @@ export function Navigation({ language, setLanguage }: NavigationProps) {
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Call once to set initial state
     return () => window.removeEventListener("scroll", handleScroll);
   }, [language]);
 
@@ -70,7 +75,7 @@ export function Navigation({ language, setLanguage }: NavigationProps) {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-primary glow">
+          <div className="text-2xl font-bold text-white glow">
             ✦ Portfolio
           </div>
 
@@ -85,8 +90,8 @@ export function Navigation({ language, setLanguage }: NavigationProps) {
                   onClick={() => scrollToSection(item.href)}
                   className={`transition-all duration-300 ${
                     activeSection === item.href.slice(1)
-                      ? "glow bg-primary text-primary-foreground"
-                      : "hover:bg-accent hover:text-accent-foreground"
+                      ? "glow bg-teal-500 text-white"
+                      : "hover:bg-teal-500/20 hover:text-teal-400"
                   }`}
                 >
                   {item.name}
@@ -98,7 +103,7 @@ export function Navigation({ language, setLanguage }: NavigationProps) {
               variant="outline"
               size="sm"
               onClick={toggleLanguage}
-              className="text-xs px-3 py-1 border-primary/30 hover:border-primary transition-all duration-300"
+              className="text-xs px-3 py-1 border-teal-300 hover:border-teal-400 hover:bg-teal-500/10 hover:text-teal-400 transition-all duration-300"
             >
               {language === "ko" ? "ENGLISH" : "한국어"}
             </Button>

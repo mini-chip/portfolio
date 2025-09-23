@@ -1,35 +1,45 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ArrowDown, Github, Mail, Rocket } from "lucide-react";
 
 const heroTexts = {
   ko: {
-    greeting: "안녕하세요, 저는",
     name: "김민희",
-    suffix: "입니다",
     description:
-      "우주처럼 무한한 가능성을 가진 웹 개발자로서, 창의적이고 혁신적인 디지털 경험을 만들어갑니다.",
-    githubBtn: "GitHub 보기",
+      "Next.js와 React를 활용하여 사용자 중심의 웹 서비스를 개발합니다. 2,000명이 사용하는 실제 서비스 개선 경험을 바탕으로, 성능 최적화와 사용자 경험 향상에 집중하는 프론트엔드 개발자입니다.",
+
+    githubBtn: "GitHub",
     contactBtn: "연락하기",
+    linkedinBtn: "LinkedIn",
   },
   en: {
-    greeting: "Hello, I'm",
     name: "Minhee Kim",
-    suffix: "",
     description:
-      "A web developer with infinite possibilities like the universe, creating creative and innovative digital experiences.",
-    githubBtn: "View GitHub",
+      "Frontend Developer specializing in Next.js and React. Experienced in optimizing services used by 2,000+ users, focusing on performance enhancement and exceptional user experiences.",
+    githubBtn: "GitHub",
     contactBtn: "Contact Me",
+    linkedinBtn: "LinkedIn",
   },
 };
 
 interface HeroProps {
-  language: "ko" | "en"
+  language: "ko" | "en";
 }
 
 export function Hero({ language }: HeroProps) {
+  const [nameToggle, setNameToggle] = useState<"ko" | "en">("ko");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNameToggle((prev) => (prev === "ko" ? "en" : "ko"));
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToAbout = () => {
     const element = document.getElementById("about");
     if (element) {
@@ -44,38 +54,48 @@ export function Hero({ language }: HeroProps) {
     >
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <div className="mb-8 float">
-            <Avatar className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-primary to-accent glow">
-              <AvatarFallback className="bg-transparent text-6xl">
-                <Rocket className="w-16 h-16 text-primary-foreground" />
-              </AvatarFallback>
-            </Avatar>
-          </div>
-
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
-            {heroTexts[language].greeting}{" "}
-            <span className="text-primary glow">
-              {heroTexts[language].name}
+            <span className="text-gray-200 transition-all duration-300 ease-in-out">
+              {heroTexts[nameToggle].name}
             </span>
-            {heroTexts[language].suffix && ` ${heroTexts[language].suffix}`}
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-pretty max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 mb-8 text-pretty max-w-2xl mx-auto">
             {heroTexts[language].description}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="glow bg-primary hover:bg-primary/90">
+            <Button
+              size="lg"
+              className="glow bg-teal-500 hover:bg-teal-600"
+              onClick={() =>
+                window.open("https://github.com/mini-chip", "_blank")
+              }
+            >
               <Github className="mr-2 h-5 w-5" />
               {heroTexts[language].githubBtn}
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+              className="border-teal-400 text-teal-400 hover:bg-teal-500 hover:text-white bg-transparent"
             >
               <Mail className="mr-2 h-5 w-5" />
               {heroTexts[language].contactBtn}
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-teal-400 text-teal-400 hover:bg-teal-500 hover:text-white bg-transparent"
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/%EB%AF%BC%ED%9D%AC-%EA%B9%80-599b232a8/",
+                  "_blank"
+                )
+              }
+            >
+              <Mail className="mr-2 h-5 w-5" />
+              {heroTexts[language].linkedinBtn}
             </Button>
           </div>
 
@@ -83,7 +103,7 @@ export function Hero({ language }: HeroProps) {
             variant="ghost"
             size="lg"
             onClick={scrollToAbout}
-            className="animate-bounce hover:text-primary"
+            className="animate-bounce hover:text-teal-400 border-2 border-solid "
           >
             <ArrowDown className="h-6 w-6" />
           </Button>

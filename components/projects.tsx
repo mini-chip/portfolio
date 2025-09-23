@@ -1,53 +1,132 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github } from "lucide-react";
 
 const projects = {
   ko: [
     {
-      title: "우주 탐험 앱",
-      description: "React와 Three.js를 사용하여 만든 인터랙티브한 3D 우주 탐험 웹 애플리케이션입니다.",
-      tech: ["React", "Three.js", "TypeScript", "Tailwind CSS"],
-      image: "/space-exploration-app-with-3d-planets-and-stars.jpg",
+      title: "Datamanim",
+      description:
+        "최대 2000명 접속자를 가진 ADP자격증 시험 준비 웹 서비스로서, 처음으로 외주를 받아 jupyter notebook -> Next.js로 마이그레이션한 프로젝트입니다.",
+      tech: [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "Tanstack Query",
+        "Zustand"
+      ],
+      image: "/datamanim_main.png",
+      demoUrl:
+        "https://datamanim-migration-copy-bscy62902-minhees-projects-3eff1d38.vercel.app/",
+      githubUrl: "https://github.com/mini-chip/datamanim-migration-copy"
     },
     {
-      title: "포트폴리오 웹사이트",
-      description: "Next.js와 Framer Motion을 활용한 반응형 포트폴리오 웹사이트입니다.",
-      tech: ["Next.js", "Framer Motion", "Tailwind CSS", "Vercel"],
+      title: "INDEX",
+      description:
+        "INDEX는 사용자가 책을 읽으며 느낀 감정을 중심으로 기록하고 공유할 수 있는 감정 기반 독서 기록 서비스입니다. 단순히 책을 저장하는 데 그치지 않고, 읽는 과정에서의 감정과 생각을 함께 남길 수 있도록 설계되었습니다.",
+      tech: [
+        "Next.js 15",
+        "TypeScript",
+        "Tailwind CSS",
+        "Tanstack Query",
+        "Zustand"
+      ],
+      image: "/INDEX_main.jpg",
+      demoUrl: "https://index-pi-nine-40.vercel.app/",
+      githubUrl: "https://github.com/SWYP-index/swyp-frontend"
+    },
+    {
+      title: "WED",
+      description: "Next.js를 이용한 날씨 예보를 이용해 ",
+      tech: ["Next.js", "Tailwind CSS", "Typescript", "Axios", "Vercel"],
       image: "/modern-portfolio-website-with-cosmic-theme.jpg",
+      demoUrl:
+        "https://wed-arsy-7edxc34ub-minhees-projects-3eff1d38.vercel.app/",
+      githubUrl: "https://github.com/mini-chip/wed"
     },
     {
-      title: "날씨 대시보드",
-      description: "실시간 날씨 정보를 제공하는 대시보드 애플리케이션입니다.",
-      tech: ["Vue.js", "Chart.js", "OpenWeather API", "Sass"],
+      title: "QuickQuestion(QQ)",
+      description: "날씨에 따라 다양한 테마를 가진 익명 문답 서비스입니다.",
+      tech: [
+        "Next.js",
+        "SASS",
+        "OpenWeather API",
+        "TypeScript",
+        "Storybook",
+        "REST API",
+        "TanstackQuery",
+        "React-Hook-Form"
+      ],
       image: "/weather-dashboard-with-charts-and-cosmic-design.jpg",
-    },
+      demoUrl: "https://quick-question-weather.vercel.app/",
+      githubUrl: "https://github.com/Important-is-Great-Youths/QuickQuestion"
+    }
   ],
   en: [
     {
-      title: "Space Explorer App",
-      description: "Interactive 3D space exploration web application built with React and Three.js.",
-      tech: ["React", "Three.js", "TypeScript", "Tailwind CSS"],
-      image: "/space-exploration-app-with-3d-planets-and-stars.jpg",
+      title: "Datamanim",
+      description:
+        "ADP certification exam preparation web service with up to 2,000 concurrent users. First freelance project migrating from Jupyter Notebook to Next.js.",
+      tech: [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "Tanstack Query",
+        "Zustand"
+      ],
+      image: "/datamanim_main.png",
+      demoUrl:
+        "https://datamanim-migration-copy-bscy62902-minhees-projects-3eff1d38.vercel.app/",
+      githubUrl: "https://github.com/mini-chip/datamanim-migration-copy"
     },
     {
-      title: "Portfolio Website",
-      description: "Responsive portfolio website using Next.js and Framer Motion.",
-      tech: ["Next.js", "Framer Motion", "Tailwind CSS", "Vercel"],
+      title: "INDEX",
+      description:
+        "INDEX is an emotion-based reading record service where users can record and share the emotions they feel while reading books. It's designed to allow users to record their emotions and thoughts during the reading process, not just store books.",
+      tech: [
+        "Next.js 15",
+        "TypeScript",
+        "Tailwind CSS",
+        "Tanstack Query",
+        "Zustand"
+      ],
+      image: "/INDEX_main.jpg",
+      demoUrl: "https://index-pi-nine-40.vercel.app/",
+      githubUrl: "https://github.com/SWYP-index/swyp-frontend"
+    },
+    {
+      title: "WED",
+      description: "Weather forecast application using Next.js",
+      tech: ["Next.js", "Tailwind CSS", "Typescript", "Axios", "Vercel"],
       image: "/modern-portfolio-website-with-cosmic-theme.jpg",
+      demoUrl:
+        "https://wed-arsy-7edxc34ub-minhees-projects-3eff1d38.vercel.app/",
+      githubUrl: "https://github.com/mini-chip/wed"
     },
     {
-      title: "Weather Dashboard",
-      description: "Real-time weather information dashboard application.",
-      tech: ["Vue.js", "Chart.js", "OpenWeather API", "Sass"],
+      title: "QuickQuestion(QQ)",
+      description:
+        "Anonymous Q&A service with various themes according to weather conditions.",
+      tech: [
+        "Next.js",
+        "SASS",
+        "OpenWeather API",
+        "TypeScript",
+        "Storybook",
+        "REST API",
+        "TanstackQuery",
+        "React-Hook-Form"
+      ],
       image: "/weather-dashboard-with-charts-and-cosmic-design.jpg",
-    },
-  ],
-}
+      demoUrl: "https://quick-question-weather.vercel.app/",
+      githubUrl: "https://github.com/Important-is-Great-Youths/QuickQuestion"
+    }
+  ]
+};
 
 interface ProjectsProps {
-  language: "ko" | "en"
+  language: "ko" | "en";
 }
 
 export function Projects({ language }: ProjectsProps) {
@@ -55,7 +134,7 @@ export function Projects({ language }: ProjectsProps) {
     <section id="projects" className="py-20 relative z-10">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
             ✦ {language === "ko" ? "프로젝트" : "Projects"}
           </h2>
 
@@ -63,28 +142,35 @@ export function Projects({ language }: ProjectsProps) {
             {projects[language].map((project, index) => (
               <Card
                 key={project.title}
-                className="float bg-card/50 backdrop-blur-sm border-border hover:border-primary transition-all duration-300 group overflow-hidden"
+                className="float bg-white backdrop-blur-sm border-border hover:border-teal-400 transition-all duration-300 group overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader className="p-0">
-                  <div className="relative overflow-hidden">
+                  <div
+                    className="relative overflow-hidden cursor-pointer"
+                    onClick={() => window.open(project.demoUrl, "_blank")}
+                  >
                     <img
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
                       className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <CardTitle className="text-xl mb-3 text-primary">{project.title}</CardTitle>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
+                  <CardTitle className="text-xl mb-3 text-gray-800">
+                    {project.title}
+                  </CardTitle>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <Badge
                         key={tech}
                         variant="secondary"
-                        className="bg-primary/10 text-primary border border-primary/20"
+                        className="bg-teal-100 text-teal-700 border border-teal-200"
                       >
                         {tech}
                       </Badge>
@@ -94,12 +180,17 @@ export function Projects({ language }: ProjectsProps) {
                     <Button
                       size="sm"
                       variant="outline"
-                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                      className="border-teal-400 text-teal-600 hover:bg-teal-500 hover:text-white bg-transparent"
+                      onClick={() => window.open(project.githubUrl, "_blank")}
                     >
                       <Github className="mr-2 h-4 w-4" />
                       {language === "ko" ? "코드" : "Code"}
                     </Button>
-                    <Button size="sm" className="bg-primary hover:bg-primary/90">
+                    <Button
+                      size="sm"
+                      className="bg-teal-500 hover:bg-teal-600"
+                      onClick={() => window.open(project.demoUrl, "_blank")}
+                    >
                       <ExternalLink className="mr-2 h-4 w-4" />
                       {language === "ko" ? "데모" : "Demo"}
                     </Button>
@@ -111,5 +202,5 @@ export function Projects({ language }: ProjectsProps) {
         </div>
       </div>
     </section>
-  )
+  );
 }

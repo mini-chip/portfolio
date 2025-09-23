@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "MINHEE's Portfolio",
   description: "포트폴리오",
   generator: "Minhee ",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
