@@ -7,6 +7,7 @@ const navItems = {
   ko: [
     { name: "홈", href: "#home" },
     { name: "소개", href: "#about" },
+    { name: "경험", href: "#experience" },
     { name: "프로젝트", href: "#projects" },
     { name: "스킬", href: "#skills" },
     { name: "연락처", href: "#contact" }
@@ -14,6 +15,7 @@ const navItems = {
   en: [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" }
@@ -45,8 +47,11 @@ export function Navigation({ language, setLanguage }: NavigationProps) {
         const section = sections[i];
         const element = document.getElementById(section);
         if (element) {
-          const { offsetTop } = element;
-          if (scrollPosition >= offsetTop - 50) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop - 100 &&
+            scrollPosition < offsetTop + offsetHeight - 100
+          ) {
             setActiveSection(section);
             break;
           }

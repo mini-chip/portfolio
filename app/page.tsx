@@ -8,6 +8,7 @@ import { Skills } from "@/components/skills";
 import { Contact } from "@/components/contact";
 import { Navigation } from "@/components/navigation";
 import { StarField } from "@/components/star-field";
+import { Experience } from "@/components/experience";
 
 export default function Home() {
   const [language, setLanguage] = useState<"ko" | "en">("ko");
@@ -19,6 +20,7 @@ export default function Home() {
       <main>
         <Hero language={language} />
         <About />
+        <Experience language={language} />
         <Projects language={language} />
         <Skills />
         <Contact />

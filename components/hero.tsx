@@ -8,17 +8,14 @@ import { ArrowDown, Github, Mail, Rocket } from "lucide-react";
 const heroTexts = {
   ko: {
     name: "김민희",
-    description:
-      "Next.js와 React를 활용하여 사용자 중심의 웹 서비스를 개발합니다. 2,000명이 사용하는 실제 서비스 개선 경험을 바탕으로, 성능 최적화와 사용자 경험 향상에 집중하는 프론트엔드 개발자입니다.",
-
+    description: "사용자 경험에 집중해 사용자들이 편리하고 기분 좋은 경험을 느낄 수 있도록 노력하는 프론트엔드 개발자",
     githubBtn: "GitHub",
     contactBtn: "연락하기",
     linkedinBtn: "LinkedIn",
   },
   en: {
     name: "Minhee Kim",
-    description:
-      "Frontend Developer specializing in Next.js and React. Experienced in optimizing services used by 2,000+ users, focusing on performance enhancement and exceptional user experiences.",
+    description: "Frontend Developer focused on user experience, striving to provide convenient and pleasant experiences for users",
     githubBtn: "GitHub",
     contactBtn: "Contact Me",
     linkedinBtn: "LinkedIn",
@@ -60,7 +57,7 @@ export function Hero({ language }: HeroProps) {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-300 mb-8 text-pretty max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 mb-8 text-center">
             {heroTexts[language].description}
           </p>
 
@@ -79,6 +76,7 @@ export function Hero({ language }: HeroProps) {
               size="lg"
               variant="outline"
               className="border-teal-400 text-teal-400 hover:bg-teal-500 hover:text-white bg-transparent"
+              onClick={() => window.open("mailto:kimmin5209@gmail.com", "_blank")}
             >
               <Mail className="mr-2 h-5 w-5" />
               {heroTexts[language].contactBtn}
