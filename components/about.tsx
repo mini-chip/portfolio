@@ -11,47 +11,33 @@ export function About() {
             ✦ 소개
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="float bg-white backdrop-blur-sm border-border hover:border-teal-400 transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-2xl text-gray-800">
-                  <Star className="w-6 h-6" />
-                  저에 대해
-                </CardTitle>
-                <Separator className="bg-teal-200" />
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  안녕하세요! 저는 웹 개발에 열정을 가진 개발자입니다. 사용자
-                  경험을 중시하며, 깔끔하고 효율적인 코드를 작성하는 것을
-                  좋아합니다. 새로운 기술을 배우고 적용하는 것에 즐거움을
-                  느끼며, 팀과 협업하여 더 나은 결과물을 만들어내는 것을 목표로
-                  합니다.
+          <Card className="float bg-white backdrop-blur-sm border-border hover:border-teal-400 transition-all duration-300">
+            <CardContent>
+              <div className="text-muted-foreground leading-relaxed space-y-4">
+                <p className="text-lg">
+                  안녕하세요! 저는 프론트엔드 개발자로서{" "}
+                  <strong className="text-gray-800">
+                    사용자 경험에 집중해 사용자들이 편리하고 기분 좋은 경험을
+                    느낄 수 있도록 노력
+                  </strong>
+                  하고 있습니다.
                 </p>
-              </CardContent>
-            </Card>
 
-            <Card
-              className="float bg-white backdrop-blur-sm border-border hover:border-teal-400 transition-all duration-300"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-2xl text-gray-800">
-                  <Rocket className="w-6 h-6" />
-                  개발 철학
-                </CardTitle>
-                <Separator className="bg-teal-200" />
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  "우주처럼 무한한 가능성"이라는 모토로 개발에 임합니다. 사용자
-                  중심의 디자인과 성능 최적화를 통해 더 나은 웹 경험을
-                  제공하고자 합니다. 지속적인 학습과 성장을 통해 변화하는 기술
-                  트렌드에 발맞춰 나가고 있습니다.
+                <p className="text-lg">
+                  <span className="text-teal-600 font-semibold text-xl">
+                    '어떤 문제를 해결할 수 있을까?'
+                  </span>
+                  {" "}라는 질문을 항상 마음에 새기며, 창의적이고 혁신적인 솔루션을
+                  찾기 위해 끊임없이 도전하고 있습니다.
                 </p>
-              </CardContent>
-            </Card>
-          </div>
+
+                <p className="text-lg text-gray-600 italic">
+                  앞으로도 수많은 도전을 통해 한 분야에만 국한되지 않고 여러
+                  기술 스택을 습득해 끊임없이 성장하는 개발자가 되겠습니다.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

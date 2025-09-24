@@ -40,7 +40,7 @@ const projects = {
       title: "WED",
       description: "Next.js를 이용한 날씨 예보를 이용해 ",
       tech: ["Next.js", "Tailwind CSS", "Typescript", "Axios", "Vercel"],
-      image: "/modern-portfolio-website-with-cosmic-theme.jpg",
+      image: "/wed_main.png",
       demoUrl:
         "https://wed-arsy-7edxc34ub-minhees-projects-3eff1d38.vercel.app/",
       githubUrl: "https://github.com/mini-chip/wed"
@@ -58,9 +58,24 @@ const projects = {
         "TanstackQuery",
         "React-Hook-Form"
       ],
-      image: "/weather-dashboard-with-charts-and-cosmic-design.jpg",
+      image: "/QQ_main.png",
       demoUrl: "https://quick-question-weather.vercel.app/",
       githubUrl: "https://github.com/Important-is-Great-Youths/QuickQuestion"
+    },
+    {
+      title: "Mogazoa",
+      description:
+        "음악, 식당, 영화, 강의, 여행지, 전자기기, 호텔, 와인, 옷, 앱 등 다양한 분야의 상품을 리뷰하는 플랫폼입니다.",
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Style-Components",
+        "React-Hook-Form",
+        "REST API"
+      ],
+      image: "/mogazoa_main.png",
+      demoUrl: "https://mogazoa.vercel.app/",
+      githubUrl: "https://github.com/5-1-Mogazoa/Mogazoa"
     }
   ],
   en: [
@@ -99,7 +114,7 @@ const projects = {
       title: "WED",
       description: "Weather forecast application using Next.js",
       tech: ["Next.js", "Tailwind CSS", "Typescript", "Axios", "Vercel"],
-      image: "/modern-portfolio-website-with-cosmic-theme.jpg",
+      image: "/wed_main.png",
       demoUrl:
         "https://wed-arsy-7edxc34ub-minhees-projects-3eff1d38.vercel.app/",
       githubUrl: "https://github.com/mini-chip/wed"
@@ -118,9 +133,24 @@ const projects = {
         "TanstackQuery",
         "React-Hook-Form"
       ],
-      image: "/weather-dashboard-with-charts-and-cosmic-design.jpg",
+      image: "/QQ_main.png",
       demoUrl: "https://quick-question-weather.vercel.app/",
       githubUrl: "https://github.com/Important-is-Great-Youths/QuickQuestion"
+    },
+    {
+      title: "Mogazoa",
+      description:
+        "A platform for reviewing products across various categories including music, restaurants, movies, lectures, travel destinations, electronics, hotels, wine, clothing, and apps.",
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Style-Components",
+        "React-Hook-Form",
+        "REST API"
+      ],
+      image: "/mogazoa_main.png",
+      demoUrl: "https://mogazoa.vercel.app/",
+      githubUrl: "https://github.com/5-1-Mogazoa/Mogazoa"
     }
   ]
 };

@@ -9,20 +9,20 @@ const navItems = {
     { name: "소개", href: "#about" },
     { name: "프로젝트", href: "#projects" },
     { name: "스킬", href: "#skills" },
-    { name: "연락처", href: "#contact" },
+    { name: "연락처", href: "#contact" }
   ],
   en: [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
-    { name: "Contact", href: "#contact" },
-  ],
+    { name: "Contact", href: "#contact" }
+  ]
 };
 
 interface NavigationProps {
-  language: "ko" | "en"
-  setLanguage: (language: "ko" | "en") => void
+  language: "ko" | "en";
+  setLanguage: (language: "ko" | "en") => void;
 }
 
 export function Navigation({ language, setLanguage }: NavigationProps) {
@@ -33,8 +33,10 @@ export function Navigation({ language, setLanguage }: NavigationProps) {
       const sections = navItems[language].map((item) => item.href.slice(1));
       const scrollPosition = window.scrollY + 100;
 
-      // Check if we're at the bottom of the page (contact section)
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50
+      ) {
         setActiveSection("contact");
         return;
       }
@@ -53,7 +55,7 @@ export function Navigation({ language, setLanguage }: NavigationProps) {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Call once to set initial state
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [language]);
 
@@ -75,9 +77,7 @@ export function Navigation({ language, setLanguage }: NavigationProps) {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-white glow">
-            ✦ Portfolio
-          </div>
+          <div className="text-2xl font-bold text-white glow">✦ MINHEE </div>
 
           <div className="flex items-center space-x-4">
             <div className="hidden md:flex space-x-1">
