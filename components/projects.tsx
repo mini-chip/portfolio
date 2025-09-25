@@ -22,8 +22,7 @@ const projects = {
         "Zustand"
       ],
       image: "/datamanim_main.png",
-      demoUrl:
-        "https://datamanim-migration-copy-bscy62902-minhees-projects-3eff1d38.vercel.app/",
+      demoUrl: "https://datastudydemo.vercel.app/",
       githubUrl: "https://github.com/mini-chip/datamanim-migration-copy"
     },
     {
@@ -56,8 +55,7 @@ const projects = {
       ],
       tech: ["Next.js", "Tailwind CSS", "Typescript", "Axios", "Vercel"],
       image: "/wed_main.png",
-      demoUrl:
-        "https://wed-arsy-7edxc34ub-minhees-projects-3eff1d38.vercel.app/",
+      demoUrl: "https://wed-arsy.vercel.app/",
       githubUrl: "https://github.com/mini-chip/wed"
     },
     {
@@ -80,7 +78,7 @@ const projects = {
       ],
       image: "/QQ_main.png",
       demoUrl: "https://quick-question-weather.vercel.app/",
-      githubUrl: "https://github.com/Important-is-Great-Youths/QuickQuestion"
+      githubUrl: "https://github.com/mini-chip/QuickQuestion"
     },
     {
       title: "Mogazoa",
@@ -100,7 +98,7 @@ const projects = {
       ],
       image: "/mogazoa_main.png",
       demoUrl: "https://mogazoa.vercel.app/",
-      githubUrl: "https://github.com/5-1-Mogazoa/Mogazoa"
+      githubUrl: "https://github.com/mini-chip/Mogazoa"
     }
   ],
   en: [
@@ -252,11 +250,16 @@ export function Projects({ language }: ProjectsProps) {
                     <div className="mb-3">
                       <h4 className="text-xs font-semibold text-gray-700 mb-2 flex items-center gap-1">
                         <Star className="w-3 h-3" />
-                        <strong>{language === "ko" ? "주요 성과" : "Key Achievements"}</strong>
+                        <strong>
+                          {language === "ko" ? "주요 성과" : "Key Achievements"}
+                        </strong>
                       </h4>
                       <ul className="space-y-1">
                         {project.achievements.map((achievement, idx) => (
-                          <li key={idx} className="text-xs text-muted-foreground flex items-start gap-1">
+                          <li
+                            key={idx}
+                            className="text-xs text-muted-foreground flex items-start gap-1"
+                          >
                             <span className="text-teal-500 mt-0.5">•</span>
                             <strong>{achievement}</strong>
                           </li>
