@@ -119,8 +119,7 @@ const projects = {
         "Zustand"
       ],
       image: "/datamanim_main.png",
-      demoUrl:
-        "https://datamanim-migration-copy-bscy62902-minhees-projects-3eff1d38.vercel.app/",
+      demoUrl: "https://datastudydemo.vercel.app/",
       githubUrl: "https://github.com/mini-chip/datamanim-migration-copy"
     },
     {
@@ -153,8 +152,7 @@ const projects = {
       ],
       tech: ["Next.js", "Tailwind CSS", "Typescript", "Axios", "Vercel"],
       image: "/wed_main.png",
-      demoUrl:
-        "https://wed-arsy-7edxc34ub-minhees-projects-3eff1d38.vercel.app/",
+      demoUrl: "https://wed-arsy.vercel.app/",
       githubUrl: "https://github.com/mini-chip/wed"
     },
     {
@@ -178,7 +176,7 @@ const projects = {
       ],
       image: "/QQ_main.png",
       demoUrl: "https://quick-question-weather.vercel.app/",
-      githubUrl: "https://github.com/Important-is-Great-Youths/QuickQuestion"
+      githubUrl: "https://github.com/mini-chip/QuickQuestion"
     },
     {
       title: "Mogazoa",
@@ -198,7 +196,7 @@ const projects = {
       ],
       image: "/mogazoa_main.png",
       demoUrl: "https://mogazoa.vercel.app/",
-      githubUrl: "https://github.com/5-1-Mogazoa/Mogazoa"
+      githubUrl: "https://github.com/mini-chip/Mogazoa"
     }
   ]
 };

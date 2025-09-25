@@ -7,6 +7,7 @@ import { ArrowDown, Github, Mail } from "lucide-react";
 const heroTexts = {
   ko: {
     name: "김민희",
+    catchphrase: ["사용자", "중심의", "웹", "경험을", "만드는"],
     description: "",
     githubBtn: "GitHub",
     contactBtn: "연락하기",
@@ -14,6 +15,7 @@ const heroTexts = {
   },
   en: {
     name: "Minhee Kim",
+    catchphrase: ["Creating", "User-Centered", "Web", "Experiences"],
     description: "",
     githubBtn: "GitHub",
     contactBtn: "Contact Me",
@@ -27,6 +29,8 @@ interface HeroProps {
 
 export function Hero({ language }: HeroProps) {
   const [nameToggle, setNameToggle] = useState<"ko" | "en">("ko");
+  const [typingText, setTypingText] = useState<string[]>([]);
+  const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,6 +39,32 @@ export function Hero({ language }: HeroProps) {
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const words = heroTexts[language].catchphrase;
+    setTypingText([]);
+    setIsTyping(true);
+
+    let currentWords: string[] = [];
+
+    words.forEach((word, index) => {
+      setTimeout(() => {
+        currentWords = [...currentWords, word];
+        setTypingText([...currentWords]);
+
+        if (index === words.length - 1) {
+          setTimeout(() => {
+            setIsTyping(false);
+          }, 200);
+        }
+      }, index * 400); // 400ms 간격
+    });
+
+    // 언어 변경 시 타이머 정리를 위한 cleanup
+    return () => {
+      currentWords = [];
+    };
+  }, [language]);
 
   const scrollToAbout = () => {
     const element = document.getElementById("about");
@@ -50,9 +80,28 @@ export function Hero({ language }: HeroProps) {
     >
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
+          <div className="mb-4">
+            <p className="text-lg md:text-xl text-teal-300 mb-2 min-h-[1.5rem]">
+              <span className="relative">
+                {typingText.map((word, index) => (
+                  <span
+                    key={`${language}-${word}-${index}`}
+                    className="inline-block mr-2 animate-[fadeIn_0.3s_ease-in-out_forwards]"
+                  >
+                    {word}
+                  </span>
+                ))}
+                {isTyping && (
+                  <span className="animate-pulse text-teal-400">|</span>
+                )}
+              </span>
+            </p>
+          </div>
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
-            <span className="text-gray-200 transition-all duration-300 ease-in-out">
+            <span className="text-gray-200 transition-all duration-300 ease-in-out relative">
               {heroTexts[nameToggle].name}
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-teal-400 to-blue-500 transform scale-x-0 animate-[slideIn_1s_ease-in-out_1s_forwards]"></span>
             </span>
           </h1>
 
