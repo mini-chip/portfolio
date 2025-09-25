@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { ArrowDown, Github, Mail, Rocket } from "lucide-react";
+import { ArrowDown, Github, Mail } from "lucide-react";
 
 const heroTexts = {
   ko: {

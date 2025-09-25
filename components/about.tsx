@@ -1,6 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Star, Rocket } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface AboutProps {
   language: "ko" | "en";
