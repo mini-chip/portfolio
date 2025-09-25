@@ -1,14 +1,19 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Star } from "lucide-react";
 
 const projects = {
   ko: [
     {
       title: "Datamanim",
       description:
-        "최대 2000명 접속자를 가진 ADP자격증 시험 준비 웹 서비스로서, 처음으로 외주를 받아 jupyter notebook -> Next.js로 마이그레이션한 프로젝트입니다.",
+        "최대 2,000명의 동시 접속자를 가진 ADP 자격증 시험 준비 웹 서비스를 Jupyter Notebook에서 Next.js로 마이그레이션한 외주 프로젝트입니다.",
+      achievements: [
+        "Lighthouse 성능 점수 39 → 72로 84% 개선",
+        "LCP 시간 11.0s → 3.9s로 65% 단축",
+        "CLS 점수 0.31 → 0.02로 최적화"
+      ],
       tech: [
         "Next.js 14",
         "TypeScript",
@@ -24,7 +29,12 @@ const projects = {
     {
       title: "INDEX",
       description:
-        "INDEX는 사용자가 책을 읽으며 느낀 감정을 중심으로 기록하고 공유할 수 있는 감정 기반 독서 기록 서비스입니다. 단순히 책을 저장하는 데 그치지 않고, 읽는 과정에서의 감정과 생각을 함께 남길 수 있도록 설계되었습니다.",
+        "사용자가 책을 읽으며 느낀 감정을 중심으로 기록하고 공유할 수 있는 감정 기반 독서 기록 서비스입니다.",
+      achievements: [
+        "사용자 감정 데이터 시각화 구현",
+        "반응형 웹 디자인 적용",
+        "실시간 데이터 동기화 기능 개발"
+      ],
       tech: [
         "Next.js 15",
         "TypeScript",
@@ -38,7 +48,12 @@ const projects = {
     },
     {
       title: "WED",
-      description: "Next.js를 이용한 날씨 예보를 이용해 ",
+      description: "날씨 정보를 기반으로 한 웹 애플리케이션입니다.",
+      achievements: [
+        "OpenWeather API 연동",
+        "반응형 디자인 구현",
+        "실시간 날씨 정보 표시"
+      ],
       tech: ["Next.js", "Tailwind CSS", "Typescript", "Axios", "Vercel"],
       image: "/wed_main.png",
       demoUrl:
@@ -48,6 +63,11 @@ const projects = {
     {
       title: "QuickQuestion(QQ)",
       description: "날씨에 따라 다양한 테마를 가진 익명 문답 서비스입니다.",
+      achievements: [
+        "날씨 기반 테마 자동 변경 시스템",
+        "익명 질문/답변 기능 구현",
+        "Storybook을 활용한 컴포넌트 문서화"
+      ],
       tech: [
         "Next.js",
         "SASS",
@@ -65,7 +85,12 @@ const projects = {
     {
       title: "Mogazoa",
       description:
-        "음악, 식당, 영화, 강의, 여행지, 전자기기, 호텔, 와인, 옷, 앱 등 다양한 분야의 상품을 리뷰하는 플랫폼입니다.",
+        "다양한 분야의 상품을 리뷰할 수 있는 종합 리뷰 플랫폼입니다.",
+      achievements: [
+        "10개 카테고리 상품 리뷰 시스템",
+        "사용자 리뷰 평점 및 랭킹 기능",
+        "반응형 UI/UX 디자인 적용"
+      ],
       tech: [
         "Next.js",
         "TypeScript",
@@ -82,7 +107,12 @@ const projects = {
     {
       title: "Datamanim",
       description:
-        "ADP certification exam preparation web service with up to 2,000 concurrent users. First freelance project migrating from Jupyter Notebook to Next.js.",
+        "Freelance project migrating ADP certification exam preparation web service from Jupyter Notebook to Next.js, handling up to 2,000 concurrent users.",
+      achievements: [
+        "Improved Lighthouse performance score 39 → 72 (84% boost)",
+        "Reduced LCP time 11.0s → 3.9s (65% improvement)",
+        "Optimized CLS score 0.31 → 0.02"
+      ],
       tech: [
         "Next.js 14",
         "TypeScript",
@@ -98,7 +128,12 @@ const projects = {
     {
       title: "INDEX",
       description:
-        "INDEX is an emotion-based reading record service where users can record and share the emotions they feel while reading books. It's designed to allow users to record their emotions and thoughts during the reading process, not just store books.",
+        "Emotion-based reading record service where users can record and share emotions while reading books.",
+      achievements: [
+        "User emotion data visualization implementation",
+        "Responsive web design application",
+        "Real-time data synchronization development"
+      ],
       tech: [
         "Next.js 15",
         "TypeScript",
@@ -112,7 +147,12 @@ const projects = {
     },
     {
       title: "WED",
-      description: "Weather forecast application using Next.js",
+      description: "Weather information web application built with Next.js.",
+      achievements: [
+        "OpenWeather API integration",
+        "Responsive design implementation",
+        "Real-time weather information display"
+      ],
       tech: ["Next.js", "Tailwind CSS", "Typescript", "Axios", "Vercel"],
       image: "/wed_main.png",
       demoUrl:
@@ -123,6 +163,11 @@ const projects = {
       title: "QuickQuestion(QQ)",
       description:
         "Anonymous Q&A service with various themes according to weather conditions.",
+      achievements: [
+        "Weather-based automatic theme switching system",
+        "Anonymous Q&A functionality implementation",
+        "Component documentation with Storybook"
+      ],
       tech: [
         "Next.js",
         "SASS",
@@ -140,7 +185,12 @@ const projects = {
     {
       title: "Mogazoa",
       description:
-        "A platform for reviewing products across various categories including music, restaurants, movies, lectures, travel destinations, electronics, hotels, wine, clothing, and apps.",
+        "Comprehensive review platform for products across various categories.",
+      achievements: [
+        "10-category product review system",
+        "User review rating and ranking features",
+        "Responsive UI/UX design implementation"
+      ],
       tech: [
         "Next.js",
         "TypeScript",
@@ -188,40 +238,64 @@ export function Projects({ language }: ProjectsProps) {
                     <div className="absolute inset-0 bg-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </CardHeader>
-                <CardContent className="p-6">
-                  <CardTitle className="text-xl mb-3 text-gray-800">
+                <CardContent className="p-4 flex flex-col h-full">
+                  <CardTitle className="text-lg mb-2 text-gray-800">
                     {project.title}
                   </CardTitle>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+
+                  <p className="text-muted-foreground mb-3 leading-relaxed text-sm">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="secondary"
-                        className="bg-teal-100 text-teal-700 border border-teal-200"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
+
+                  {/* 주요 성과 */}
+                  {project.achievements && (
+                    <div className="mb-3">
+                      <h4 className="text-xs font-semibold text-gray-700 mb-2 flex items-center gap-1">
+                        <Star className="w-3 h-3" />
+                        <strong>{language === "ko" ? "주요 성과" : "Key Achievements"}</strong>
+                      </h4>
+                      <ul className="space-y-1">
+                        {project.achievements.map((achievement, idx) => (
+                          <li key={idx} className="text-xs text-muted-foreground flex items-start gap-1">
+                            <span className="text-teal-500 mt-0.5">•</span>
+                            <strong>{achievement}</strong>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* 기술 스택 */}
+                  <div className="mb-3 mt-auto">
+                    <div className="flex flex-wrap gap-1">
+                      {project.tech.map((tech) => (
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="bg-teal-100 text-teal-700 border border-teal-200 text-xs px-2 py-1"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
+
                   <div className="flex gap-2">
                     <Button
                       size="sm"
                       variant="outline"
-                      className="border-teal-400 text-teal-600 hover:bg-teal-500 hover:text-white bg-transparent"
+                      className="border-teal-400 text-teal-600 hover:bg-teal-500 hover:text-white bg-transparent flex-1 text-xs"
                       onClick={() => window.open(project.githubUrl, "_blank")}
                     >
-                      <Github className="mr-2 h-4 w-4" />
+                      <Github className="mr-1 h-3 w-3" />
                       {language === "ko" ? "코드" : "Code"}
                     </Button>
                     <Button
                       size="sm"
-                      className="bg-teal-500 hover:bg-teal-600"
+                      className="bg-teal-500 hover:bg-teal-600 flex-1 text-xs"
                       onClick={() => window.open(project.demoUrl, "_blank")}
                     >
-                      <ExternalLink className="mr-2 h-4 w-4" />
+                      <ExternalLink className="mr-1 h-3 w-3" />
                       {language === "ko" ? "데모" : "Demo"}
                     </Button>
                   </div>

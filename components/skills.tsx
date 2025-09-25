@@ -2,46 +2,80 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Database, Wrench } from "lucide-react";
 
-const skillCategories = [
-  {
-    title: "프론트엔드",
-    icon: Code,
-    skills: [
-      "React",
-      "Next.js",
-      "JavaScript",
-      "TypeScript",
-      "Tailwind CSS",
-      "TanstakQuery",
-      "zustand",
-      "Redux",
-      "SASS",
-      "Styled-Components",
-    ],
-  },
-  {
-    title: "백엔드",
-    icon: Database,
-    skills: ["Supabase"],
-  },
-  {
-    title: "도구 & 기타",
-    icon: Wrench,
-    skills: ["Git", "Vercel", "Figma", "Notion"],
-  },
-];
+const skillCategories = {
+  ko: [
+    {
+      title: "프론트엔드",
+      icon: Code,
+      skills: [
+        "React",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "Tailwind CSS",
+        "TanstakQuery",
+        "zustand",
+        "Redux",
+        "SASS",
+        "Styled-Components",
+      ],
+    },
+    {
+      title: "백엔드",
+      icon: Database,
+      skills: ["Supabase"],
+    },
+    {
+      title: "도구 & 기타",
+      icon: Wrench,
+      skills: ["Git", "Vercel", "Figma", "Notion"],
+    },
+  ],
+  en: [
+    {
+      title: "Frontend",
+      icon: Code,
+      skills: [
+        "React",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "Tailwind CSS",
+        "TanstakQuery",
+        "zustand",
+        "Redux",
+        "SASS",
+        "Styled-Components",
+      ],
+    },
+    {
+      title: "Backend",
+      icon: Database,
+      skills: ["Supabase"],
+    },
+    {
+      title: "Tools & Others",
+      icon: Wrench,
+      skills: ["Git", "Vercel", "Figma", "Notion"],
+    },
+  ],
+};
 
-export function Skills() {
+interface SkillsProps {
+  language: "ko" | "en";
+}
+
+export function Skills({ language }: SkillsProps) {
   return (
     <section id="skills" className="py-20 relative z-10">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
-            ✦ 스킬
+            ✦ {language === "ko" ? "스킬" : "Skills"}
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {skillCategories.map((category, index) => {
+            {skillCategories[language].map((category, index) => {
               const IconComponent = category.icon;
               return (
                 <Card

@@ -42,15 +42,6 @@ const experiences = {
       ]
     },
     {
-      title: "다양한 개인  프로젝트",
-      role: "개발자",
-      period: "2025",
-      type: "project",
-      description: "날씨 기반 문답 서비스, 리뷰 플랫폼 등 다양한 도메인 경험",
-      highlights: ["WED - 날씨 예보 애플리케이션"],
-      tech: ["Next.js", "React", "TypeScript", "SASS", "REST API"]
-    },
-    {
       title: "코드잇 스프린트 프론트엔드 트랙",
       role: "수료생",
       period: "2023.10 - 2024.04",
@@ -77,31 +68,17 @@ const experiences = {
         "데이터베이스 및 소프트웨어 공학",
         "팀 프로젝트 경험"
       ],
-      tech: ["Java", "C", "Python", "SQL"]
+      tech: ["Java", "Javascript", "C", "Python", "SQL"]
     }
   ],
   en: [
     {
-      title: "Codeit Sprint Frontend Track",
-      role: "Graduate",
-      period: "2024",
-      type: "education",
-      description: "Practical frontend development bootcamp",
-      highlights: [
-        "React/Next.js based real-world projects",
-        "Team collaboration experience",
-        "Professional developer mentoring"
-      ],
-      tech: ["React", "Next.js", "TypeScript", "JavaScript", "Git"]
-    },
-    {
       title: "Datamanim Migration Project",
       role: "Frontend Developer (Freelance)",
-      period: "2024",
+      period: "2025.08 - 2025.09",
       type: "work",
       description: "Complete migration from Jupyter Notebook to Next.js",
       highlights: [
-        "Handled up to 2000 concurrent users",
         "ADP certification exam preparation service",
         "Performance optimization and UX improvement"
       ],
@@ -116,7 +93,7 @@ const experiences = {
     {
       title: "SWYP Project - INDEX",
       role: "Frontend Developer",
-      period: "2024",
+      period: "2025.07 - 2025.09",
       type: "project",
       description: "Emotion-based reading record service development",
       highlights: [
@@ -133,31 +110,30 @@ const experiences = {
       ]
     },
     {
-      title: "University Graduation",
-      role: "Bachelor's Degree",
-      period: "2018-2022",
+      title: "Codeit Sprint Frontend Track",
+      role: "Graduate",
+      period: "2023.10 - 2024.04",
       type: "education",
-      description: "Computer Science related major",
+      description: "Practical frontend development bootcamp",
+      highlights: [
+        "React/Next.js based real-world projects",
+        "Team collaboration experience",
+        "Professional developer mentoring"
+      ],
+      tech: ["React", "Next.js", "TypeScript", "JavaScript", "Git"]
+    },
+    {
+      title: "Kyungnam University Graduation",
+      role: "Bachelor's Degree",
+      period: "2017-2021",
+      type: "education",
+      description: "Computer Engineering major",
       highlights: [
         "Programming fundamentals and algorithms",
         "Database and software engineering",
         "Team project experience"
       ],
-      tech: ["Java", "C", "Python", "SQL"]
-    },
-    {
-      title: "Various Personal Projects",
-      role: "Developer",
-      period: "2023-2024",
-      type: "project",
-      description:
-        "Experience across diverse domains including weather-based Q&A and review platforms",
-      highlights: [
-        "QuickQuestion - Weather-themed anonymous Q&A service",
-        "Mogazoa - Comprehensive review platform",
-        "WED - Weather forecast application"
-      ],
-      tech: ["Next.js", "React", "TypeScript", "SASS", "REST API"]
+      tech: ["Java", "Javascript", "C", "Python", "SQL"]
     }
   ]
 };

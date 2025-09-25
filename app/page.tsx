@@ -19,10 +19,10 @@ export default function Home() {
       <Navigation language={language} setLanguage={setLanguage} />
       <main>
         <Hero language={language} />
-        <About />
+        <About language={language} />
         <Experience language={language} />
         <Projects language={language} />
-        <Skills />
+        <Skills language={language} />
         <Contact />
       </main>
     </div>
