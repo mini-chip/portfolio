@@ -29,9 +29,9 @@ const experiences = {
       type: "project",
       description: "감정 기반 독서 기록 서비스 개발",
       highlights: [
-        "사용자 감정 데이터 시각화",
-        "반응형 웹 디자인 구현",
-        "실시간 데이터 동기화"
+        "사용자 감정 데이터 시각화 구현",
+        "무한 스크롤 및 QueryClient 무효화",
+        "일반/인증 API 인스턴스 분리"
       ],
       tech: [
         "Next.js 15",
@@ -97,9 +97,9 @@ const experiences = {
       type: "project",
       description: "Emotion-based reading record service development",
       highlights: [
-        "User emotion data visualization",
-        "Responsive web design implementation",
-        "Real-time data synchronization"
+        "User emotion data visualization implementation",
+        "Infinite scroll and QueryClient invalidation",
+        "Separation of general/authenticated API instances"
       ],
       tech: [
         "Next.js 15",
@@ -116,6 +116,8 @@ const experiences = {
       type: "education",
       description: "Practical frontend development bootcamp",
       highlights: [
+        "QuickQuestion - Anonymous Q&A service with weather themes",
+        "Mogazoa - Comprehensive review platform",
         "React/Next.js based real-world projects",
         "Team collaboration experience",
         "Professional developer mentoring"

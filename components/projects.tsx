@@ -31,8 +31,8 @@ const projects = {
         "사용자가 책을 읽으며 느낀 감정을 중심으로 기록하고 공유할 수 있는 감정 기반 독서 기록 서비스입니다.",
       achievements: [
         "사용자 감정 데이터 시각화 구현",
-        "반응형 웹 디자인 적용",
-        "실시간 데이터 동기화 기능 개발"
+        "무한 스크롤 및 QueryClient 무효화",
+        "일반/인증 API 인스턴스 분리"
       ],
       tech: [
         "Next.js 15",
@@ -128,8 +128,8 @@ const projects = {
         "Emotion-based reading record service where users can record and share emotions while reading books.",
       achievements: [
         "User emotion data visualization implementation",
-        "Responsive web design application",
-        "Real-time data synchronization development"
+        "Infinite scroll and QueryClient invalidation",
+        "Separation of general/authenticated API instances"
       ],
       tech: [
         "Next.js 15",
