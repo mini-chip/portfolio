@@ -9,7 +9,7 @@ import { Contact } from "@/components/contact";
 import { Navigation } from "@/components/navigation";
 import { StarField } from "@/components/star-field";
 import { Experience } from "@/components/experience";
-
+import { Comment } from "@/components/comment";
 export default function Home() {
   const [language, setLanguage] = useState<"ko" | "en">("ko");
 
@@ -23,6 +23,7 @@ export default function Home() {
         <Experience language={language} />
         <Projects language={language} />
         <Skills language={language} />
+        <Comment language={language} />
         <Contact />
       </main>
     </div>
