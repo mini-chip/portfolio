@@ -315,7 +315,6 @@ export function Projects({ language }: ProjectsProps) {
                       </Button>
                     </div>
 
-                    {/* INDEX 프로젝트에만 테스트 계정 정보 버튼 표시 */}
                     {project.title === "INDEX" && (
                       <Dialog
                         open={isTestAccountModalOpen}
@@ -366,11 +365,6 @@ export function Projects({ language }: ProjectsProps) {
                                   Test@0708
                                 </code>
                               </div>
-                            </div>
-                            <div className="text-xs text-gray-500 bg-blue-50 p-3 rounded border border-blue-200">
-                              {language === "ko"
-                                ? "※ 테스트 계정은 서비스 체험용이며, 실제 데이터는 저장되지 않을 수 있습니다."
-                                : "※ This test account is for demonstration purposes only. Actual data may not be saved."}
                             </div>
                           </div>
                         </DialogContent>

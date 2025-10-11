@@ -296,7 +296,7 @@ export function Comment({ language }: CommentProps) {
             </button>
           </div>
 
-          <Card className="mb-8 bg-white backdrop-blur-sm border-border">
+          <Card id="comment-form" className="mb-8 bg-white backdrop-blur-sm border-border">
             <CardHeader>
               <CardTitle className="text-xl text-gray-800 flex items-center gap-2">
                 <MessageCircle className="w-5 h-5" />

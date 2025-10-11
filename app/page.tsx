@@ -10,6 +10,7 @@ import { Navigation } from "@/components/navigation";
 import { StarField } from "@/components/star-field";
 import { Experience } from "@/components/experience";
 import { Comment } from "@/components/comment";
+import { FloatingMenu } from "@/components/floating-menu";
 export default function Home() {
   const [language, setLanguage] = useState<"ko" | "en">("ko");
 
@@ -26,6 +27,7 @@ export default function Home() {
         <Comment language={language} />
         <Contact />
       </main>
+      <FloatingMenu language={language} />
     </div>
   );
 }
