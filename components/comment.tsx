@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { MessageCircle, Send, User, Calendar } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase";
 
 interface Comment {
   id: string;
@@ -23,6 +24,30 @@ export function Comment({ language }: CommentProps) {
   const [content, setContent] = useState("");
   const [comments, setComments] = useState<Comment[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetchComments();
+  }, []);
+
+  const fetchComments = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("comments")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+
+      if (data) {
+        setComments(data);
+      }
+    } catch (error) {
+      console.error("Error fetching comments:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,23 +55,30 @@ export function Comment({ language }: CommentProps) {
 
     setIsSubmitting(true);
 
-    // TODO: Supabase ��
-    // const { data, error } = await supabase
-    //   .from('comments')
-    //   .insert([{ name, content }])
-    //   .select()
+    try {
+      const { data, error } = await supabase
+        .from("comments")
+        .insert([{ name, content }])
+        .select();
 
-    const newComment: Comment = {
-      id: Date.now().toString(),
-      name,
-      content,
-      created_at: new Date().toISOString()
-    };
-    setComments([newComment, ...comments]);
+      if (error) throw error;
 
-    setName("");
-    setContent("");
-    setIsSubmitting(false);
+      if (data && data.length > 0) {
+        setComments([data[0], ...comments]);
+      }
+
+      setName("");
+      setContent("");
+    } catch (error) {
+      console.error("Error submitting comment:", error);
+      alert(
+        language === "ko"
+          ? "댓글 작성에 실패했습니다."
+          : "Failed to submit comment."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formatDate = (dateString: string) => {
@@ -125,7 +157,18 @@ export function Comment({ language }: CommentProps) {
           </Card>
 
           <div className="space-y-4">
-            {comments.length === 0 ? (
+            {isLoading ? (
+              <Card className="bg-white/80 backdrop-blur-sm border-border">
+                <CardContent className="py-12 text-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-500 mx-auto mb-4"></div>
+                  <p className="text-muted-foreground">
+                    {language === "ko"
+                      ? "코멘트 불러오는 중..."
+                      : "Loading comments..."}
+                  </p>
+                </CardContent>
+              </Card>
+            ) : comments.length === 0 ? (
               <Card className="bg-white/80 backdrop-blur-sm border-border">
                 <CardContent className="py-12 text-center">
                   <MessageCircle className="w-12 h-12 mx-auto mb-4 text-gray-400" />

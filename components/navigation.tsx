@@ -10,7 +10,8 @@ const navItems = {
     { name: "경험", href: "#experience" },
     { name: "프로젝트", href: "#projects" },
     { name: "스킬", href: "#skills" },
-    { name: "연락처", href: "#contact" }
+    { name: "연락처", href: "#contact" },
+    { name: "코멘트", href: "#comment" }
   ],
   en: [
     { name: "Home", href: "#home" },
@@ -18,7 +19,8 @@ const navItems = {
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
-    { name: "Contact", href: "#contact" }
+    { name: "Contact", href: "#contact" },
+    { name: "Comments", href: "#comment" }
   ]
 };
 

@@ -1,7 +1,18 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Star } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from "@/components/ui/dialog";
+import { ExternalLink, Github, Star, Info } from "lucide-react";
+import { useState } from "react";
 
 const projects = {
   ko: [
@@ -206,6 +217,8 @@ interface ProjectsProps {
 }
 
 export function Projects({ language }: ProjectsProps) {
+  const [isTestAccountModalOpen, setIsTestAccountModalOpen] = useState(false);
+
   return (
     <section id="projects" className="py-20 relative z-10">
       <div className="container mx-auto px-4">
@@ -281,24 +294,88 @@ export function Projects({ language }: ProjectsProps) {
                     </div>
                   </div>
 
-                  <div className="flex gap-2">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="border-teal-400 text-teal-600 hover:bg-teal-500 hover:text-white bg-transparent flex-1 text-xs"
-                      onClick={() => window.open(project.githubUrl, "_blank")}
-                    >
-                      <Github className="mr-1 h-3 w-3" />
-                      {language === "ko" ? "코드" : "Code"}
-                    </Button>
-                    <Button
-                      size="sm"
-                      className="bg-teal-500 hover:bg-teal-600 flex-1 text-xs"
-                      onClick={() => window.open(project.demoUrl, "_blank")}
-                    >
-                      <ExternalLink className="mr-1 h-3 w-3" />
-                      {language === "ko" ? "데모" : "Demo"}
-                    </Button>
+                  <div className="flex gap-2 flex-col">
+                    <div className="flex gap-2">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="border-teal-400 text-teal-600 hover:bg-teal-500 hover:text-white bg-transparent flex-1 text-xs"
+                        onClick={() => window.open(project.githubUrl, "_blank")}
+                      >
+                        <Github className="mr-1 h-3 w-3" />
+                        {language === "ko" ? "코드" : "Code"}
+                      </Button>
+                      <Button
+                        size="sm"
+                        className="bg-teal-500 hover:bg-teal-600 flex-1 text-xs"
+                        onClick={() => window.open(project.demoUrl, "_blank")}
+                      >
+                        <ExternalLink className="mr-1 h-3 w-3" />
+                        {language === "ko" ? "데모" : "Demo"}
+                      </Button>
+                    </div>
+
+                    {/* INDEX 프로젝트에만 테스트 계정 정보 버튼 표시 */}
+                    {project.title === "INDEX" && (
+                      <Dialog
+                        open={isTestAccountModalOpen}
+                        onOpenChange={setIsTestAccountModalOpen}
+                      >
+                        <DialogTrigger asChild>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="w-full border-blue-400 text-blue-600 hover:bg-blue-500 hover:text-white bg-transparent text-xs"
+                          >
+                            <Info className="mr-1 h-3 w-3" />
+                            {language === "ko"
+                              ? "테스트 계정 정보"
+                              : "Test Account Info"}
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="bg-white">
+                          <DialogHeader>
+                            <DialogTitle className="text-gray-900">
+                              {language === "ko"
+                                ? "INDEX 테스트 계정"
+                                : "INDEX Test Account"}
+                            </DialogTitle>
+                            <DialogDescription className="text-gray-600">
+                              {language === "ko"
+                                ? "아래 계정으로 로그인하여 서비스를 체험해보세요."
+                                : "Login with the account below to experience the service."}
+                            </DialogDescription>
+                          </DialogHeader>
+                          <div className="space-y-4 py-4">
+                            <div className="space-y-2">
+                              <div className="flex items-center gap-2">
+                                <span className="font-semibold text-gray-700 min-w-[80px]">
+                                  {language === "ko" ? "이메일:" : "Email:"}
+                                </span>
+                                <code className="bg-gray-100 px-3 py-1 rounded text-sm text-gray-800 flex-1">
+                                  kimmin5209@naver.com
+                                </code>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <span className="font-semibold text-gray-700 min-w-[80px]">
+                                  {language === "ko"
+                                    ? "비밀번호:"
+                                    : "Password:"}
+                                </span>
+                                <code className="bg-gray-100 px-3 py-1 rounded text-sm text-gray-800 flex-1">
+                                  Test@0708
+                                </code>
+                              </div>
+                            </div>
+                            <div className="text-xs text-gray-500 bg-blue-50 p-3 rounded border border-blue-200">
+                              {language === "ko"
+                                ? "※ 테스트 계정은 서비스 체험용이며, 실제 데이터는 저장되지 않을 수 있습니다."
+                                : "※ This test account is for demonstration purposes only. Actual data may not be saved."}
+                            </div>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
+                    )}
                   </div>
                 </CardContent>
               </Card>
