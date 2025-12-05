@@ -5,9 +5,30 @@ import { Briefcase, Calendar, Users, GraduationCap, Code } from "lucide-react";
 const experiences = {
   ko: [
     {
+      title: "SWYP 프로젝트 - Helpie",
+      role: "프론트엔드 개발자",
+      period: "2025.10 - 2025.11",
+      type: "project",
+      description: "해외 생활자들을 위한 소모임 플랫폼",
+      highlights: [
+        "아토믹 디자인 패턴 기반 코드 구조화",
+        "모바일 반응형 CSS 구현",
+        "로그인/비로그인 상태별 조건부 뷰"
+      ],
+      tech: [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "Tanstack Query",
+        "Zustand",
+        "WebSocket"
+      ]
+    },
+
+    {
       title: "Datamanim 마이그레이션 프로젝트",
       role: "프론트엔드 개발자 (외주)",
-      period: "2025.08 - 2025.09",
+      period: "v1: 2025.08 - 2025.09, v2: 2025.09 - 2025.10",
       type: "work",
       description: "Jupyter Notebook 기반 서비스를 Next.js로 완전 마이그레이션",
       highlights: [
@@ -73,9 +94,29 @@ const experiences = {
   ],
   en: [
     {
+      title: "SWYP Project - Helpie",
+      role: "Frontend Developer",
+      period: "2025.10 - 2025.11",
+      type: "project",
+      description: "Small group platform for overseas residents",
+      highlights: [
+        "Code structuring based on atomic design pattern",
+        "Mobile responsive CSS implementation",
+        "Conditional views by login/logout status"
+      ],
+      tech: [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "Tanstack Query",
+        "Zustand",
+        "WebSocket"
+      ]
+    },
+    {
       title: "Datamanim Migration Project",
       role: "Frontend Developer (Freelance)",
-      period: "2025.08 - 2025.09",
+      period: "v1: 2025.08 - 2025.09, v2: 2025.09 - 2025.10",
       type: "work",
       description: "Complete migration from Jupyter Notebook to Next.js",
       highlights: [
@@ -205,7 +246,7 @@ export function Experience({ language }: ExperienceProps) {
 
                   {exp.tech && exp.tech.length > 0 && (
                     <div className="flex flex-wrap gap-1">
-                      {exp.tech.slice(0, 4).map((tech) => (
+                      {exp.tech.map((tech) => (
                         <Badge
                           key={tech}
                           variant="secondary"
@@ -214,14 +255,6 @@ export function Experience({ language }: ExperienceProps) {
                           {tech}
                         </Badge>
                       ))}
-                      {exp.tech.length > 4 && (
-                        <Badge
-                          variant="secondary"
-                          className="bg-gray-100 text-gray-600 border border-gray-200 text-xs px-2 py-1"
-                        >
-                          +{exp.tech.length - 4}
-                        </Badge>
-                      )}
                     </div>
                   )}
                 </CardContent>

@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Database, Wrench } from "lucide-react";
+import { Code, Database } from "lucide-react";
 
 const skillCategories = {
   ko: [
@@ -10,25 +10,19 @@ const skillCategories = {
       skills: [
         "React",
         "Next.js",
-        "JavaScript",
         "TypeScript",
+        "JavaScript",
         "Tailwind CSS",
-        "TanstakQuery",
-        "zustand",
-        "Redux",
+        "Tanstack Query",
+        "Zustand",
         "SASS",
         "Styled-Components",
       ],
     },
     {
-      title: "백엔드",
+      title: "백엔드 & 도구",
       icon: Database,
-      skills: ["Supabase"],
-    },
-    {
-      title: "도구 & 기타",
-      icon: Wrench,
-      skills: ["Git", "Vercel", "Figma", "Notion"],
+      skills: ["Supabase", "Git", "Vercel", "Figma", "Notion"],
     },
   ],
   en: [
@@ -38,25 +32,19 @@ const skillCategories = {
       skills: [
         "React",
         "Next.js",
-        "JavaScript",
         "TypeScript",
+        "JavaScript",
         "Tailwind CSS",
-        "TanstakQuery",
-        "zustand",
-        "Redux",
+        "Tanstack Query",
+        "Zustand",
         "SASS",
         "Styled-Components",
       ],
     },
     {
-      title: "Backend",
+      title: "Backend & Tools",
       icon: Database,
-      skills: ["Supabase"],
-    },
-    {
-      title: "Tools & Others",
-      icon: Wrench,
-      skills: ["Git", "Vercel", "Figma", "Notion"],
+      skills: ["Supabase", "Git", "Vercel", "Figma", "Notion"],
     },
   ],
 };
@@ -74,7 +62,7 @@ export function Skills({ language }: SkillsProps) {
             ✦ {language === "ko" ? "스킬" : "Skills"}
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {skillCategories[language].map((category, index) => {
               const IconComponent = category.icon;
               return (

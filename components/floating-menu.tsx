@@ -61,7 +61,6 @@ export function FloatingMenu({ language }: FloatingMenuProps) {
 
   return (
     <div className="md:hidden fixed bottom-6 right-6 z-50">
-      {/* Menu Items */}
       <div
         className={`absolute bottom-20 right-0 flex flex-col gap-3 transition-all duration-300 ${
           isFloatingMenuOpen

@@ -57,10 +57,9 @@ export function Hero({ language }: HeroProps) {
             setIsTyping(false);
           }, 200);
         }
-      }, index * 400); // 400ms 간격
+      }, index * 400);
     });
 
-    // 언어 변경 시 타이머 정리를 위한 cleanup
     return () => {
       currentWords = [];
     };
@@ -126,20 +125,6 @@ export function Hero({ language }: HeroProps) {
             >
               <Mail className="mr-2 h-5 w-5" />
               {heroTexts[language].contactBtn}
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-teal-400 text-teal-400 hover:bg-teal-500 hover:text-white bg-transparent"
-              onClick={() =>
-                window.open(
-                  "https://www.linkedin.com/in/%EB%AF%BC%ED%9D%AC-%EA%B9%80-599b232a8/",
-                  "_blank"
-                )
-              }
-            >
-              <Mail className="mr-2 h-5 w-5" />
-              {heroTexts[language].linkedinBtn}
             </Button>
           </div>
 

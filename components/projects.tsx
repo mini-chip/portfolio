@@ -11,11 +11,32 @@ import {
   DialogTitle,
   DialogTrigger
 } from "@/components/ui/dialog";
-import { ExternalLink, Github, Star, Info } from "lucide-react";
+import { ExternalLink, Github, Star, Info, X } from "lucide-react";
 import { useState } from "react";
 
 const projects = {
   ko: [
+    {
+      title: "Helpie",
+      description:
+        "전 세계 해외 생활자들이 서로의 경험과 정보를 나누며, 더 쉽고 따뜻하게 정착할 수 있도록 돕는 글로벌 커뮤니티 플랫폼입니다.",
+      achievements: [
+        "아토믹 디자인 패턴 기반 코드 구조화",
+        "모바일 반응형 CSS 구현",
+        "로그인/비로그인 상태별 조건부 뷰"
+      ],
+      tech: [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "Tanstack Query",
+        "Zustand",
+        "WebSocket"
+      ],
+      image: "/helpie.png",
+      demoUrl: "https://helpie-main.vercel.app/",
+      githubUrl: "https://github.com/Helpie-Team/helpie-frontend"
+    },
     {
       title: "Datamanim",
       description:
@@ -55,19 +76,6 @@ const projects = {
       image: "/INDEX_main.jpg",
       demoUrl: "https://index-pi-nine-40.vercel.app/",
       githubUrl: "https://github.com/SWYP-index/swyp-frontend"
-    },
-    {
-      title: "WED",
-      description: "날씨 정보를 기반으로 한 웹 애플리케이션입니다.",
-      achievements: [
-        "OpenWeather API 연동",
-        "반응형 디자인 구현",
-        "실시간 날씨 정보 표시"
-      ],
-      tech: ["Next.js", "Tailwind CSS", "Typescript", "Axios", "Vercel"],
-      image: "/wed_main.png",
-      demoUrl: "https://wed-arsy.vercel.app/",
-      githubUrl: "https://github.com/mini-chip/wed"
     },
     {
       title: "QuickQuestion(QQ)",
@@ -114,6 +122,27 @@ const projects = {
   ],
   en: [
     {
+      title: "Helpie",
+      description:
+        "A global community platform helping overseas residents share experiences and information for easier, warmer settlement worldwide.",
+      achievements: [
+        "Code structuring based on atomic design pattern",
+        "Mobile responsive CSS implementation",
+        "Conditional views by login/logout status"
+      ],
+      tech: [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "Tanstack Query",
+        "Zustand",
+        "WebSocket"
+      ],
+      image: "/helpie.png",
+      demoUrl: "https://helpie-main.vercel.app/",
+      githubUrl: "https://github.com/Helpie-Team/helpie-frontend"
+    },
+    {
       title: "Datamanim",
       description:
         "Freelance project migrating ADP certification exam preparation web service from Jupyter Notebook to Next.js, handling up to 2,000 concurrent users.",
@@ -152,19 +181,6 @@ const projects = {
       image: "/INDEX_main.jpg",
       demoUrl: "https://index-pi-nine-40.vercel.app/",
       githubUrl: "https://github.com/SWYP-index/swyp-frontend"
-    },
-    {
-      title: "WED",
-      description: "Weather information web application built with Next.js.",
-      achievements: [
-        "OpenWeather API integration",
-        "Responsive design implementation",
-        "Real-time weather information display"
-      ],
-      tech: ["Next.js", "Tailwind CSS", "Typescript", "Axios", "Vercel"],
-      image: "/wed_main.png",
-      demoUrl: "https://wed-arsy.vercel.app/",
-      githubUrl: "https://github.com/mini-chip/wed"
     },
     {
       title: "QuickQuestion(QQ)",
@@ -256,7 +272,6 @@ export function Projects({ language }: ProjectsProps) {
                     {project.description}
                   </p>
 
-                  {/* 주요 성과 */}
                   {project.achievements && (
                     <div className="mb-3">
                       <h4 className="text-xs font-semibold text-gray-700 mb-2 flex items-center gap-1">
@@ -279,7 +294,6 @@ export function Projects({ language }: ProjectsProps) {
                     </div>
                   )}
 
-                  {/* 기술 스택 */}
                   <div className="mb-3 mt-auto">
                     <div className="flex flex-wrap gap-1">
                       {project.tech.map((tech) => (
@@ -333,6 +347,12 @@ export function Projects({ language }: ProjectsProps) {
                           </Button>
                         </DialogTrigger>
                         <DialogContent className="bg-white">
+                          <button
+                            onClick={() => setIsTestAccountModalOpen(false)}
+                            className="absolute right-4 top-4 p-1 hover:bg-gray-100 rounded-full z-50"
+                          >
+                            <X className="h-4 w-4 text-black" />
+                          </button>
                           <DialogHeader>
                             <DialogTitle className="text-gray-900">
                               {language === "ko"
@@ -341,12 +361,24 @@ export function Projects({ language }: ProjectsProps) {
                             </DialogTitle>
                             <DialogDescription className="text-gray-600">
                               {language === "ko"
-                                ? "아래 계정으로 로그인하여 서비스를 체험해보세요."
-                                : "Login with the account below to experience the service."}
+                                ? "⚠️ 현재 서버가 종료된 상태입니다. 깃허브 동영상으로 프로젝트를 확인해주세요."
+                                : "⚠️ Server is currently down. Please check the project via GitHub video demo."}
                             </DialogDescription>
                           </DialogHeader>
                           <div className="space-y-4 py-4">
-                            <div className="space-y-2">
+                            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                              <p className="text-sm text-yellow-800">
+                                {language === "ko"
+                                  ? "🔗 깃허브 레포지토리에서 프로젝트 시연 영상을 확인할 수 있습니다."
+                                  : "🔗 You can view the project demo video in the GitHub repository."}
+                              </p>
+                            </div>
+                            <div className="space-y-2 opacity-50">
+                              <h4 className="text-sm font-medium text-gray-700">
+                                {language === "ko"
+                                  ? "이전 테스트 계정 정보 (서버 종료):"
+                                  : "Previous Test Account Info (Server Down):"}
+                              </h4>
                               <div className="flex items-center gap-2">
                                 <span className="font-semibold text-gray-700 min-w-[80px]">
                                   {language === "ko" ? "이메일:" : "Email:"}
